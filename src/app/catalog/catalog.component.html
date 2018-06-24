@@ -1,0 +1,8 @@
+<div class="grid grid-pad">
+  <a *ngFor="let product of products" class="col-1-4" routerLink="/{{product.sname}}">
+    <div class="module">
+      <img [src]="product.iurl">
+      {{product.sname}}
+    </div>
+  </a>
+</div>

@@ -1,0 +1,19 @@
+<!--ul>
+  <li *ngFor="let user of usersObservable | async">
+    {{ user.id }} by {{ user.name }} and {{user.age}}
+  </li>
+</ul-->
+<div>
+  <a routerLink="/catalog.html" routerLinkActive="active"><img src="assets/menu/мебель.PNG"></a>
+  <img src="assets/menu/игрушки.PNG">
+  <img src="assets/menu/стулья.PNG">
+</div>
+<div class="grid grid-pad">
+  <a *ngFor="let product of products" class="col-1-4" routerLink="/{{product.sname}}">
+    <div class="module">
+      <img [src]="product.iurl">
+      {{product.sname}}
+    </div>
+  </a>
+</div>
+
