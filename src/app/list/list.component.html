@@ -1,19 +1,22 @@
-<!--ul>
-  <li *ngFor="let user of usersObservable | async">
-    {{ user.id }} by {{ user.name }} and {{user.age}}
-  </li>
-</ul-->
 <div>
   <a routerLink="/catalog.html" routerLinkActive="active"><img src="assets/menu/мебель.PNG"></a>
   <img src="assets/menu/игрушки.PNG">
   <img src="assets/menu/стулья.PNG">
 </div>
-<div class="grid grid-pad">
-  <a *ngFor="let product of products" class="col-1-4" routerLink="/{{product.sname}}">
-    <div class="module">
-      <img [src]="product.iurl">
-      {{product.sname}}
+  <div class="row">
+    <div class="col s3" *ngFor="let product of products" routerLink="/{{product.sname}}">
+      <div class="card">
+        <div class="card-image">
+          <img [src]="product.iurl">
+          <span class="card-title">{{product.sname}}</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
     </div>
-  </a>
-</div>
-
+  </div>
