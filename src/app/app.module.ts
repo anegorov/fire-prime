@@ -15,6 +15,8 @@ import { ListComponent } from './list/list.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { ItemComponent } from './item/item.component';
+import { FormsModule} from "@angular/forms";
+import {SearchPipe} from "./search.pipe";
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -24,7 +26,8 @@ export const firebaseConfig = environment.firebaseConfig;
     ListComponent,
     ArticlesComponent,
     CatalogComponent,
-    ItemComponent
+    ItemComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ export const firebaseConfig = environment.firebaseConfig;
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

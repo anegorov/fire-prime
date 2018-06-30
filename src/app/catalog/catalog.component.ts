@@ -10,6 +10,7 @@ import {Product} from "../product";
 export class CatalogComponent implements OnInit {
 
   products: Product[];
+  searchStr = '';
 
   constructor(private ProductService: ProductService) { }
 

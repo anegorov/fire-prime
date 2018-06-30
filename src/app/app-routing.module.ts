@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'main.html', component: ListComponent, data: {type:'мебель'} },
   { path: 'catalog.html', component: CatalogComponent },
   { path: 'articles.html', component: ArticlesComponent },
-  { path: ':sname', component: ItemComponent }
+  { path: ':link', component: ItemComponent }
 ];
 
 @NgModule({
