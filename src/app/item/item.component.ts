@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-
+import {ActivatedRoute, Params} from "@angular/router";
+import {ProductService} from "../product.service";
+import {Product} from "../product";
 
 
 @Component({
@@ -10,15 +11,23 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ItemComponent implements OnInit {
 
-  link;
+  products: Product[];
+
+  userId:string;
 
   constructor(
-      private route: ActivatedRoute
+      private route: ActivatedRoute,
+      private ProductService: ProductService
   ) { }
 
   ngOnInit() {
-      const id = +this.route.snapshot.paramMap.get('link');
-      this.link = id.toString(1);
+      this.route.params.subscribe((params: Params) => {
+          let userId = params['link'];
+          this.ProductService.getProductByLink(userId).subscribe(product => this.products = product);
+          console.log(userId);
+      });
+
+
   }
 
 }

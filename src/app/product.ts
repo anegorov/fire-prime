@@ -4,4 +4,5 @@ export class Product {
     description: string;
     tags: string;
     type: string;
+    link: string;
 }
