@@ -13,8 +13,7 @@
           <span class="card-title blue-grey-text text-darken-2">{{product.sname}}</span>
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p>{{product.description| slice:0:50}}<</p>
         </div>
       </div>
     </div>

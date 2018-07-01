@@ -2,52 +2,66 @@
   <div class="container">
     <div class="row">
       <div class="col s12 center-align"><h2>{{ product.sname }}</h2></div>
-      <div class="col s6"><img [src]="product.iurl"></div>
+      <div class="col s6">
+	  <img [src]="product.iurl">
+	  </div>
       <div class="col s6">
         <table>
           <thead>
           <tr>
-            <th>Name</th>
-            <th>Item Name</th>
-            <th>Item Price</th>
+            <th>Характеристика</th>
+            <th>Значение</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
+            <td>Цена материалов</td>
+            <td>~600 руб</td>
           </tr>
           <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
+            <td>Время работы</td>
+            <td>3 часа</td>
           </tr>
           <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
+            <td>Уровень сложности</td>
+            <td>лёгкий</td>
           </tr>
           </tbody>
         </table>
       </div>
-      <div class="col s12"><p>{{ product.description }}</p></div>
+      <!--div class="col s12"><p>{{ product.description }}</p></div-->
     </div>
 
     <div class="divider"></div>
     <div class="section">
-      <h5>Section 1</h5>
+      <h5>Описание</h5>
+      <p>{{ product.description }}</p>
+    </div>
+	<div class="divider"></div>
+    <div class="section">
+      <h5>Похожие</h5>
       <p>Stuff</p>
     </div>
     <div class="divider"></div>
     <div class="section">
-      <h5>Section 2</h5>
-      <p>Stuff</p>
+      <h5>Комментарий</h5>
+      <!--p>Stuff</p-->
+	      <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="input_text" type="text" data-length="10">
+            <label for="input_text">Input text</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+            <label for="textarea2">Textarea</label>
+          </div>
+        </div>
+      </form>
     </div>
-    <div class="divider"></div>
-    <div class="section">
-      <h5>Section 3</h5>
-      <p>Stuff</p>
     </div>
 
   </div>
