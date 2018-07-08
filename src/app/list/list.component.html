@@ -1,11 +1,15 @@
-<div>
+<!--div>
   <a routerLink="/catalog.html" routerLinkActive="active"><img src="assets/menu/мебель.PNG"></a>
   <img src="assets/menu/игрушки.PNG">
   <img src="assets/menu/стулья.PNG">
-</div>
+</div-->
 
 <div class="container">
-
+  <div class="row">
+  <a class="waves-effect waves-light btn-large">Домики</a>
+  <a class="waves-effect waves-light btn-large">Лошадки</a>
+  <a class="waves-effect waves-light btn-large">Мебель</a>
+  </div>1
   <div class="row">
     <div class="col s3 hoverable" *ngFor="let product of products" routerLink="/{{product.sname}}">
       <div class="card">
