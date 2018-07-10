@@ -28,6 +28,12 @@ export class ProductService {
         return this.usersObservable;
     }
 
+  getProductByType(type:string):Observable<Product[]>{
+        this.usersCollection = this.afs.collection('products', ref => ref.where('type', '==', type));
+        this.usersObservable = this.usersCollection.valueChanges();
+        return this.usersObservable;
+    }
+
   getItemById(pid:string):Observable<Product>{
       this.itemDocument = this.afs.doc('products/' + pid);
       this.itemObservable = this.itemDocument.valueChanges();

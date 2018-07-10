@@ -1,15 +1,10 @@
-<!--div>
-  <a routerLink="/catalog.html" routerLinkActive="active"><img src="assets/menu/мебель.PNG"></a>
-  <img src="assets/menu/игрушки.PNG">
-  <img src="assets/menu/стулья.PNG">
-</div-->
-
 <div class="container">
-  <div class="row">
-  <a class="waves-effect waves-light btn-large">Домики</a>
-  <a class="waves-effect waves-light btn-large">Лошадки</a>
-  <a class="waves-effect waves-light btn-large">Мебель</a>
-  </div>1
+  <div class="row center-align">
+    <a class="waves-effect waves-light btn" [routerLink]="['/catalog.html',{type:'игрушка'}]">Игрушки</a>
+    <a class="waves-effect waves-light btn" [routerLink]="['/catalog.html',{type:'мебель'}]">Мебель</a>
+    <a class="waves-effect waves-light btn" [routerLink]="['/catalog.html',{type:'спорт'}]">Спорт</a>
+    <a class="waves-effect waves-light btn" [routerLink]="['/catalog.html',{type:'досуг'}]">Досуг</a>
+  </div>
   <div class="row">
     <div class="col s3 hoverable" *ngFor="let product of products" routerLink="/{{product.sname}}">
       <div class="card">
@@ -18,7 +13,7 @@
           <span class="card-title blue-grey-text text-darken-2">{{product.sname}}</span>
         </div>
         <div class="card-content">
-          <p>{{product.description}}</p>
+          <p class="truncate">{{product.description}}</p>
         </div>
       </div>
     </div>

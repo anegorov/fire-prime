@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../product.service";
 import {Product} from "../product";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-catalog',
@@ -9,13 +10,20 @@ import {Product} from "../product";
 })
 export class CatalogComponent implements OnInit {
 
+  type:string='';
   products: Product[];
   searchStr = '';
 
-  constructor(private ProductService: ProductService) { }
+  constructor(private ProductService: ProductService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
-      this.ProductService.getProduct().subscribe(product => this.products = product);
+      this.route.params.subscribe(params => { this.type = params['type']; });
+      if(this.type == ''){
+        this.ProductService.getProduct().subscribe(product => this.products = product);
+      }else {
+        this.ProductService.getProductByType(this.type).subscribe(product => this.products = product);
+      }
   }
 
 }

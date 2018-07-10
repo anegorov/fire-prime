@@ -6,7 +6,7 @@
       <ul class="left hide-on-med-and-down">
 		<li routerLinkActive="active"><a routerLink="/main.html">Главная</a></li>
 		<li routerLinkActive="active"><a routerLink="/catalog.html">Каталог</a></li>
-		<li routerLinkActive="active"><a routerLink="/articles.html">Статьи</a></li>
+		<li routerLinkActive="active"><a [routerLink]="['/articles.html',{fil:'text1233'}]">Статьи</a></li>
       </ul>
     </div>
   </nav>
