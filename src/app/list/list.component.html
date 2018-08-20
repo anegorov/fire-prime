@@ -6,7 +6,7 @@
     <a class="waves-effect waves-light btn" [routerLink]="['/catalog.html',{type:'досуг'}]">Досуг</a>
   </div>
   <div class="row">
-    <div class="col s3 hoverable" *ngFor="let product of products" routerLink="/{{product.sname}}">
+    <div class="col s3 hoverable" *ngFor="let product of products" routerLink="/{{product.link}}">
       <div class="card">
         <div class="card-image">
           <img [src]="product.iurl">

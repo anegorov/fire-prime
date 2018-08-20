@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs/index";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "angularfire2/firestore";
 import {Product} from "./product";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class ProductService {
     itemDocument: AngularFirestoreDocument<Product>;
     itemObservable: Observable<Product>;
     type = 'мебель';
+
 
   constructor(private afs: AngularFirestore) { }
 
@@ -34,9 +36,11 @@ export class ProductService {
         return this.usersObservable;
     }
 
-  getItemById(pid:string):Observable<Product>{
+  getDocById(pid:string):Observable<Product>{
       this.itemDocument = this.afs.doc('products/' + pid);
       this.itemObservable = this.itemDocument.valueChanges();
       return this.itemObservable;
   }
+
+
 }

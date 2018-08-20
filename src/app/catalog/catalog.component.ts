@@ -18,12 +18,20 @@ export class CatalogComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-      this.route.params.subscribe(params => { this.type = params['type']; });
-      if(this.type == ''){
-        this.ProductService.getProduct().subscribe(product => this.products = product);
+      this.route.params.subscribe(params => {
+          this.type = params['type'];
+          //console.log('Type:'+this.type)
+      });
+
+      // this.ProductService.getProduct().subscribe(product => {
+      //     this.products = product});
+      console.log('Type:'+this.type)
+      if(!this.type){
+        this.ProductService.getProduct().subscribe(product => {this.products = product});
       }else {
         this.ProductService.getProductByType(this.type).subscribe(product => this.products = product);
       }
-  }
 
+
+}
 }

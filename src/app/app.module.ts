@@ -16,6 +16,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { ItemComponent } from './item/item.component';
 import { FormsModule} from "@angular/forms";
 import {SearchPipe} from "./search.pipe";
+import { StudyComponent } from './study/study.component';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -26,7 +27,8 @@ export const firebaseConfig = environment.firebaseConfig;
     ArticlesComponent,
     CatalogComponent,
     ItemComponent,
-    SearchPipe
+    SearchPipe,
+    StudyComponent
   ],
   imports: [
     BrowserModule,
