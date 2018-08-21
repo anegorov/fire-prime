@@ -15,7 +15,7 @@ export class ItemComponent implements OnInit {
 
   products: Product[];
   productId: string;
-  val2: string;
+  productType: string;
   related: Product[];
   product: Observable<Product>;
 
@@ -30,13 +30,16 @@ export class ItemComponent implements OnInit {
           this.ProductService.getProductByLink(userId).subscribe(
               product => {
                   this.products = product;
-                  product.forEach(value => this.productId = value.id);
+                  product.forEach(value => {this.productId = value.id; this.productType = value.type});
                   this.product = this.ProductService.getDocById(this.productId);
+                  this.ProductService.getProduct().subscribe(rel => {this.related = rel.filter(n => n.type == this.productType).filter(m => m.id != this.productId).slice(0,4)});
               })
 
       });
 
-      this.ProductService.getProduct().subscribe(rel => {this.related = rel.slice(0,4)});
+
+
+
   }
 
 }

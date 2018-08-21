@@ -2,41 +2,15 @@
 
 
 <div class="row">
-  <div class="row">
     <div class="input-field col s8">
       <input [(ngModel)] = "newId" placeholder="id" type="text">
-    </div>
-  </div>
-  <div class="row">
-      <div class="input-field col s8">
-        <input [(ngModel)] = "newDescription" placeholder="description" type="text">
-      </div>
-  </div>
-<div class="row">
-    <div class="input-field col s8">
+      <input [(ngModel)] = "newDescription" placeholder="description" type="text">
       <input [(ngModel)] = "newIurl" placeholder="iurl" type="text">
+      <input [(ngModel)] = "newLink" placeholder="link" type="text">
+      <input [(ngModel)] = "newSname" placeholder="sname" type="text">
+      <input [(ngModel)] = "newTags" placeholder="tags" type="text">
+      <input [(ngModel)] = "newType" placeholder="type" type="text">
     </div>
-</div>
-<div class="row">
-      <div class="input-field col s8">
-        <input [(ngModel)] = "newLink" placeholder="link" type="text">
-      </div>
-</div>
-<div class="row">
-        <div class="input-field col s8">
-          <input [(ngModel)] = "newSname" placeholder="sname" type="text">
-        </div>
-</div>
-<div class="row">
-          <div class="input-field col s8">
-            <input [(ngModel)] = "newTags" placeholder="tags" type="text">
-          </div>
-</div>
-<div class="row">
-            <div class="input-field col s8">
-              <input [(ngModel)] = "newType" placeholder="type" type="text">
-            </div>
-</div>
 </div>
 
  <a class="waves-effect waves-light btn" (click)="updateContent()">update</a>
