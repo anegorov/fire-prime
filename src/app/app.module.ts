@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,15 @@ import { FormsModule} from "@angular/forms";
 import {SearchPipe} from "./search.pipe";
 import { StudyComponent } from './study/study.component';
 
+import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
+import {MenuModule} from 'primeng/menu';
+import {MenuItem} from 'primeng/api';
+import {MegaMenuModule} from 'primeng/megamenu';
+import {CarouselModule} from 'primeng/carousel';
+import {FieldsetModule} from 'primeng/fieldset';
+import {GalleriaModule} from 'primeng/galleria';
+
 export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
@@ -32,12 +42,20 @@ export const firebaseConfig = environment.firebaseConfig;
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
-    FormsModule
+    FormsModule,
+    CardModule,
+    ButtonModule,
+  	MenuModule,
+  	MegaMenuModule,
+    CarouselModule,
+    FieldsetModule,
+    GalleriaModule,
+      AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

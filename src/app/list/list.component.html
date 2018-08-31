@@ -1,21 +1,45 @@
-<div class="container">
-  <div class="row center-align">
-    <a class="waves-effect waves-light btn" [routerLink]="['/catalog.html',{type:'игрушка'}]">Игрушки</a>
-    <a class="waves-effect waves-light btn" [routerLink]="['/catalog.html',{type:'мебель'}]">Мебель</a>
-    <a class="waves-effect waves-light btn" [routerLink]="['/catalog.html',{type:'спорт'}]">Спорт</a>
-    <a class="waves-effect waves-light btn" [routerLink]="['/catalog.html',{type:'досуг'}]">Досуг</a>
-  </div>
-  <div class="row">
-    <div class="col s3 hoverable" *ngFor="let product of products" routerLink="/{{product.link}}">
-      <div class="card">
-        <div class="card-image">
-          <img [src]="product.iurl">
-          <span class="card-title blue-grey-text text-darken-2">{{product.sname}}</span>
-        </div>
-        <div class="card-content">
-          <p class="truncate">{{product.description}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="ui-g-12 ui-grid-responsive">
+	<p-carousel headerText="Cars" [value]="cars" circular="circular" autoplayInterval="3000">
+		<ng-template let-car pTemplate="item">
+			<div class="ui-grid ui-grid-responsive">
+				<div class="ui-grid-row">
+					<div class="ui-grid-col-12"><img src="assets/1.jpg" width="60"></div>
+				</div>
+				<div class="ui-grid-row">
+					<div class="ui-grid-col-6">Vin</div>
+					<div class="ui-grid-col-6">{{car.vin}}</div>
+				</div>
+				<div class="ui-grid-row">
+					<div class="ui-grid-col-6">Year</div>
+					<div class="ui-grid-col-6">{{car.year}}</div>
+				</div>
+				<div class="ui-grid-row">
+					<div class="ui-grid-col-6">Color</div>
+					<div class="ui-grid-col-6">{{car.color}}</div>
+				</div>
+			</div>
+		</ng-template>
+	</p-carousel>
 </div>
+
+<p-fieldset legend="Инструкции">
+	<div class="aitem" *ngFor="let product of products" routerLink="/{{product.link}}">
+	<p-card title="{{product.sname}}" [style]="{width: '260px'}" styleClass="ui-card-shadow" >
+	    <p-header>
+	        <img [src]="product.iurl">
+	    </p-header>
+	    <div>{{product.description | slice:0:50}}</div>
+	</p-card>
+	</div>
+</p-fieldset>
+
+<p-fieldset legend="Статьи">
+		<div class="aitem" *ngFor="let product of products" routerLink="/{{product.link}}">
+			<p-card title="{{product.sname}}" [style]="{width: '260px'}" styleClass="ui-card-shadow" >
+				<p-header>
+					<img [src]="product.iurl">
+				</p-header>
+				<div>{{product.description | slice:0:50}}</div>
+			</p-card>
+			</div>
+</p-fieldset>

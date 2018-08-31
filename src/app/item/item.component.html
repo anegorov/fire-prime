@@ -1,80 +1,49 @@
-<h3>{{productId}}</h3>
 <div *ngIf="product | async as prod">
-<div class="container">
-    <div class="row">
-      <div class="col s12 center-align"><h2>{{ prod.sname }}</h2></div>
-      <div class="col s6">
-        <img [src]="prod.iurl">
-	  </div>
-      <div class="col s6">
-        <table>
-          <thead>
-          <tr>
-            <th>Характеристика</th>
-            <th>Значение</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>Цена материалов</td>
-            <td>~600 руб</td>
-          </tr>
-          <tr>
-            <td>Время работы</td>
-            <td>3 часа</td>
-          </tr>
-          <tr>
-            <td>Уровень сложности</td>
-            <td>лёгкий</td>
-          </tr>
-          </tbody>
-        </table>
+
+    <div class="ui-g title"><h2>{{ prod.sname }}</h2></div>
+    <div class="ui-g">
+        <div class="ui-g-6 title">
+          <p-galleria [images]="images" panelWidth="500" panelHeight="500" [showCaption]="true"></p-galleria>
+        </div>
+        <div class="ui-g-6 ui-g-nopad">
+                <p-fieldset legend="Характеристики">
+                <table>
+                    <tbody>
+                    <tr>
+                      <td>Цена материалов</td>
+                      <td>~600 руб</td>
+                    </tr>
+                    <tr>
+                      <td>Время работы</td>
+                      <td>3 часа</td>
+                    </tr>
+                    <tr>
+                      <td>Уровень сложности</td>
+                      <td>лёгкий</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </p-fieldset>
+            
+            <p-fieldset legend="Описание"><p>{{ prod.description }}</p></p-fieldset>
+            
+            <div class="ui-g-12">
+                <p-button label="Скачать"></p-button>
+            </div>
+        
+
+        <p-fieldset legend="Похожие">
+            <div class="aitem" *ngFor="let rel of related" routerLink="/{{rel.link}}">
+            <p-card [style]="{width: '160px'}" styleClass="ui-card-shadow" >
+                <p-header>
+                    <img [src]="rel.iurl">
+                </p-header>
+            </p-card>
+            </div>
+        </p-fieldset>
       </div>
     </div>
+    
 
-    <div class="divider"></div>
-    <div class="section">
-      <h5>Описание</h5>
-      <p>{{ prod.description }}</p>
-    </div>
-	<div class="divider"></div>
-    <div class="section">
-      <h5>Похожие</h5>
-      <div class="row">
-        <div class="col s3" *ngFor="let rel of related" routerLink="/{{rel.link}}">
-          <div class="card">
-            <div class="card-image">
-              <img [src]="rel.iurl">
-              <span class="card-title blue-grey-text text-darken-2">{{rel.sname}}</span>
-            </div>
-            <div class="card-content">
-              <p>{{rel.description| slice:0:50}}<</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="section">
-      <h5>Комментарий</h5>
-      <!--p>Stuff</p-->
-      <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="input_text" type="text" data-length="10">
-            <label for="input_text">Input text</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-            <label for="textarea2">Textarea</label>
-          </div>
-        </div>
-      </form>
-    </div>
-    </div>
-
-  </div>
+  
 </div>

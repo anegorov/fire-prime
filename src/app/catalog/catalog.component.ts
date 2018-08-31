@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../product.service";
 import {Product} from "../product";
 import {ActivatedRoute} from "@angular/router";
+import {CardModule} from 'primeng/card';
+import {FieldsetModule} from 'primeng/fieldset';
 
 @Component({
   selector: 'app-catalog',

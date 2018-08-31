@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
 
 @Component({
   selector: 'app-articles',
@@ -18,7 +20,6 @@ export class ArticlesComponent implements OnInit {
         this.route.params.subscribe(params => {
             this.id = params['fil'];
         })
-
 
     }
 }

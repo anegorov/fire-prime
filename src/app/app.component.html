@@ -1,18 +1,15 @@
-<!--h3>Схемы, чертежи, 3D модели изделий из дерева и фанеры</h3-->
-
-  <nav>
-    <div class="nav-wrapper blue-grey darken-2">
-      <a href="/main.html" class="brand-logo center">{{title}}</a>
-      <ul class="left hide-on-med-and-down">
-		<li routerLinkActive="active"><a routerLink="/main.html">Главная</a></li>
-		<li routerLinkActive="active"><a routerLink="/catalog.html">Каталог</a></li>
-		<li routerLinkActive="active"><a [routerLink]="['/articles.html',{fil:'text1233'}]">Статьи</a></li>
-      </ul>
+<div class="ui-g">
+    <div class="ui-g-12 title">
+        <h2>{{title}}</h2>
     </div>
-  </nav>
-
-<router-outlet></router-outlet>
-
+    <div class="ui-g-12 ui-md-2">
+		    <p-menu [model]="items"></p-menu>
+	  </div>
+  <div class="ui-g-12 ui-md-10 ui-g-nopad">
+		<router-outlet></router-outlet>
+  </div>
+    
+    <div class="ui-g-12 title" style="background-color: #333">
         <footer class="page-footer blue-grey darken-2">
           <div class="container">
             <div class="row">
@@ -38,3 +35,5 @@
             </div>
           </div>
         </footer>
+    </div>
+</div>

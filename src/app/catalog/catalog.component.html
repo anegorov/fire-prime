@@ -1,21 +1,18 @@
-<div class="container">
-  <div class="row">
-    <div class="input-field col s6 right">
-      <input id="first_name2" class="validate" [(ngModel)]="searchStr">
-      <label class="active" for="first_name2">Поиск</label>
+
+<div class="ui-g-12">
+    <div class="ui-inputgroup">            
+        <input type="text" pInputText placeholder="Что ищем?" [(ngModel)]="searchStr">     
+        <button pButton type="button" label="Поиск"></button>    
     </div>
-  </div>
-  <div class="row">
-    <div class="col s3" *ngFor="let product of products | search:searchStr" routerLink="/{{product.link}}">
-      <div class="card">
-        <div class="card-image">
-          <img [src]="product.iurl">
-          <span class="card-title blue-grey-text text-darken-2">{{product.sname}}</span>
-        </div>
-        <div class="card-content">
-          <p>{{product.description| slice:0:50}}<</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
+
+<p-fieldset legend="Каталог">
+<div class="aitem" *ngFor="let product of products | search:searchStr" routerLink="/{{product.link}}">
+	<p-card title="{{product.sname}}" [style]="{width: '260px'}" styleClass="ui-card-shadow" >
+	    <p-header>
+	        <img [src]="product.iurl">
+	    </p-header>
+	    <div>{{product.description | slice:0:50}}</div>
+	</p-card>
+  </div>
+</p-fieldset>
