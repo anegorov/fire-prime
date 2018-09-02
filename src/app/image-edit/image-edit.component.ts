@@ -29,6 +29,14 @@ export class ImageEditComponent implements OnInit {
 
   showImage(valueId:string){
     this.imageDoc = this.ProductService.getImageById(valueId);
+    this.imageDoc
+        .subscribe(imgdoc => {
+          this.fid = imgdoc.id;
+          this.fpid = imgdoc.pid;
+          this.fsrc = imgdoc.src;
+          this.ftitle = imgdoc.title;
+          this.falt = imgdoc.alt;
+        });
   }
 
   updateImage(pId:string){
@@ -40,11 +48,11 @@ export class ImageEditComponent implements OnInit {
       alt:this.falt
     }
 
-    if(pId == this.fpid) {
-      console.log("Equals");
-      this.ProductService.updateProduct(pId, newImage);
-    }
-    console.log("pId:" + pId + " pId:fId" +  this.fpid)
+    if(pId == this.fid) {
+      console.log("Updated");
+      this.ProductService.updateImage(pId, newImage);
+    }else{console.log("Update failed")}
+    console.log("pId:" + pId + " fpid:" +  this.fpid)
   }
 
 }

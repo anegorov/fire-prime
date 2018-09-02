@@ -40,6 +40,11 @@ export class ProductService {
     return this.itemObservable;
 }
 
+updateImage(pId:string, data:any){
+  const doc = this.afs.doc('images/'+pId);
+  doc.set(data);
+}
+
 //Functions for reseving products
 
   getProduct():Observable<Product[]>{

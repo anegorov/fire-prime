@@ -8,23 +8,19 @@
         <div class="ui-g-6 ui-g-nopad">
                 <p-fieldset legend="Характеристики">
 
-                        <!--div *ngIf="img | async as i">
-                            {{i.1}}
-                        </div-->
-
                 <table>
                     <tbody>
                     <tr>
-                      <td>Цена материалов</td>
-                      <td>~600 руб</td>
+                      <td>Материалы</td>
+                      <td>{{ prod.material }}</td>
                     </tr>
                     <tr>
                       <td>Время работы</td>
-                      <td>3 часа</td>
+                      <td>{{ prod.dtime }} часа</td>
                     </tr>
                     <tr>
                       <td>Уровень сложности</td>
-                      <td>лёгкий</td>
+                      <td>{{ prod.level }}</td>
                     </tr>
                     </tbody>
                   </table>
