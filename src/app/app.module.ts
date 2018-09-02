@@ -18,6 +18,8 @@ import { ItemComponent } from './item/item.component';
 import { FormsModule} from "@angular/forms";
 import {SearchPipe} from "./search.pipe";
 import { StudyComponent } from './study/study.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ImageEditComponent } from './image-edit/image-edit.component';
 
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
@@ -27,6 +29,12 @@ import {MegaMenuModule} from 'primeng/megamenu';
 import {CarouselModule} from 'primeng/carousel';
 import {FieldsetModule} from 'primeng/fieldset';
 import {GalleriaModule} from 'primeng/galleria';
+import {DataScrollerModule} from 'primeng/datascroller';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputTextareaModule} from 'primeng/inputtextarea';    
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -38,7 +46,9 @@ export const firebaseConfig = environment.firebaseConfig;
     CatalogComponent,
     ItemComponent,
     SearchPipe,
-    StudyComponent
+    StudyComponent,
+    ProductEditComponent,
+    ImageEditComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +65,11 @@ export const firebaseConfig = environment.firebaseConfig;
     CarouselModule,
     FieldsetModule,
     GalleriaModule,
+    DataScrollerModule,
+    InputTextModule,
+    InputTextareaModule,
+    MessagesModule,
+    MessageModule,
       AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],

@@ -33,7 +33,10 @@ export class ListComponent implements OnInit {
             {vin: 'he6sb5v', year: 2015, brand: 'Ford', color: 'Black'}
         ];
   
-      this.ProductService.getProduct().subscribe(product => this.products = product);
+      this.ProductService.getProduct().subscribe(product => {
+        this.products = product.slice(0,6);
+      });
+
 
   }
 

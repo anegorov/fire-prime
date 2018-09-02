@@ -19,7 +19,9 @@ export class ItemComponent implements OnInit {
   productType: string;
   related: Product[];
   product: Observable<Product>;
+  img: Observable<Product>;
   images: any[];
+  
 
   constructor(
       private route: ActivatedRoute,
@@ -34,16 +36,19 @@ export class ItemComponent implements OnInit {
                   this.products = product;
                   product.forEach(value => {this.productId = value.id; this.productType = value.type});
                   this.product = this.ProductService.getDocById(this.productId);
+                  
+                  this.images = [];
+                  this.ProductService.getImagesById(this.productId)
+                  .subscribe(image => image
+                      .forEach(value => this.images.push({source:value.src, alt:value.alt, title:value.title}))
+                  );
+
                   this.ProductService.getProduct().subscribe(rel => {this.related = rel.filter(n => n.type == this.productType).filter(m => m.id != this.productId).slice(0,3)});
               })
 
       });
 
-      this.images = [];
-      this.images.push({source:'assets/catalog/80х.jpg', alt:'Description for Image 1', title:'Title 1'});
-      this.images.push({source:'assets/catalog/Домик-полка.jpg', alt:'Description for Image 2', title:'Title 2'});
-      this.images.push({source:'assets/catalog/Лампа.jpg', alt:'Description for Image 3', title:'Title 3'});
-
+      
   }
 
 }

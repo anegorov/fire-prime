@@ -1,0 +1,64 @@
+<div class="ui-g">
+  <div class="ui-g-12 ui-md-6">
+      <div *ngIf="imageDoc | async as prod">
+          <div class="ui-g product-item">
+            <div class="ui-g-12">
+              <div class="ui-g-2">id</div>
+              <div class="ui-g-6">{{prod.id}}</div>
+                <div class="ui-g-4">
+                  <input id="float-input" type="text" size="30" pInputText [(ngModel)]="fid"> 
+                </div>
+            </div>
+            <div class="ui-g-12">
+              <div class="ui-g-2">pid</div>
+              <div class="ui-g-6">{{prod.pid}}</div>
+                <div class="ui-g-4">
+                  <input id="float-input" type="text" size="30" pInputText [(ngModel)]="fpid"> 
+                </div>
+            </div>
+            <div class="ui-g-12">
+              <div class="ui-g-2">src</div>
+              <div class="ui-g-6">{{prod.src}}</div>
+                <div class="ui-g-4">
+                  <input id="float-input" type="text" size="30" pInputText [(ngModel)]="fsrc"> 
+                </div>
+              </div>
+            <div class="ui-g-12">
+              <div class="ui-g-2">title</div>
+              <div class="ui-g-6">{{prod.title}}</div>
+                <div class="ui-g-4">
+                  <input id="float-input" type="text" size="30" pInputText [(ngModel)]="ftitle"> 
+                </div>
+              </div>
+            <div class="ui-g-12">
+              <div class="ui-g-2">alt</div>
+              <div class="ui-g-6">{{prod.alt}}</div>
+                <div class="ui-g-4">
+                  <input id="float-input" type="text" size="30" pInputText [(ngModel)]="falt"> 
+                </div>
+              </div>
+
+              <div class="ui-g-2"><p-button label="Update" (click)="updateProduct(prod.id)"></p-button></div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="ui-g-12 ui-md-6">
+    <p-dataScroller [value]="images" [rows]="10">
+      <p-header>Список</p-header>
+      <p-footer>Choose from the list.</p-footer>
+      <ng-template let-product pTemplate="item">
+          <div class="ui-g product-item">
+              <div class="ui-g-3">{{product.id}}</div>
+              <div class="ui-g-3">{{product.pid}}</div>
+              <div class="ui-g-3">{{product.title}}</div>
+              <div class="ui-g-3">
+                  <p-button label="Открыть" (click)="showImage(product.id)"></p-button>
+              </div>
+          </div>
+      </ng-template>
+  </p-dataScroller>
+  </div>
+</div>
+

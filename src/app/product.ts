@@ -7,3 +7,9 @@ export class Product {
     type: string;
     link: string;
 }
+
+export interface Car {
+    vin;
+    color;
+    year;   
+}
