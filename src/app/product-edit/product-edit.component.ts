@@ -38,6 +38,20 @@ export class ProductEditComponent implements OnInit {
 
   showProduct(valueId:string){
     this.product = this.ProductService.getDocById(valueId);
+    this.product
+    .subscribe(pdoc => {
+      this.fId = pdoc.id;
+      this.fSname = pdoc.sname;
+      this.fLname = pdoc.lname;
+      this.fIurl = pdoc.iurl;
+      this.fLink = pdoc.link;
+      this.fLevel = pdoc.level;
+      this.fMaterial = pdoc.material;
+      this.fTags = pdoc.tags;
+      this.fType = pdoc.type;
+      this.fDtime = pdoc.dtime;
+      this.fDescription = pdoc.description;
+    });
   }
 
   newProduct(){
