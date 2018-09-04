@@ -19,10 +19,10 @@ ngOnInit() {
 			{label: 'Главная', icon: 'pi pi-fw pi-home',routerLink: "/main.html"},
             {label: 'Каталог', icon: 'pi pi-fw pi-th-large',routerLink: "/catalog.html"},
 			{label: 'Статьи', icon: 'pi pi-fw pi-th-large',routerLink: "/articles.html"},
-            {label: 'Игрушки', icon: 'pi pi-fw pi-chevron-right',routerLink: "/catalog.html", queryParams: {'type': 'игрушка'}},
-            {label: 'Мебель', icon: 'pi pi-fw pi-chevron-right',routerLink: ['/catalog.html'], queryParams: {'type': 'мебель'}},
-			{label: 'Спорт', icon: 'pi pi-fw pi-chevron-right',routerLink: "/catalog.html", queryParams: {'type': 'спорт'}},
-			{label: 'Досуг', icon: 'pi pi-fw pi-chevron-right',routerLink: "/catalog.html", queryParams: {'type': 'досуг'}},
+            {label: 'Игрушки', icon: 'pi pi-fw pi-chevron-right',routerLink: ["/catalog.html", {type: 'игрушка'}]},
+            {label: 'Мебель', icon: 'pi pi-fw pi-chevron-right',routerLink: ['/catalog.html',{type: 'мебель'}]},
+			{label: 'Спорт', icon: 'pi pi-fw pi-chevron-right',routerLink: ["/catalog.html", {type: 'спорт'}]},
+			{label: 'Досуг', icon: 'pi pi-fw pi-chevron-right',routerLink: ["/catalog.html", {type: 'досуг'}]},
 			{label: 'Редактор', icon: 'pi pi-fw pi-chevron-right',routerLink: "/product-edit.html"},
 			{label: 'Картинки', icon: 'pi pi-fw pi-chevron-right',routerLink: "/image-edit.html"}
         ];

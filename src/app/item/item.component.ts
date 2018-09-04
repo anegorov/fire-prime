@@ -39,10 +39,10 @@ export class ItemComponent implements OnInit {
                   
                   this.images = [];
                   this.ProductService.getImagesById(this.productId)
-                  .subscribe(image => image
-                      .forEach(value => this.images.push({source:value.src, alt:value.alt, title:value.title}))
-                  );
-
+                    .subscribe(res => {
+                        this.images = res.map(x => {return {source:x.src, alt:x.alt, title:x.title};});
+                    });
+ 
                   this.ProductService.getProduct().subscribe(rel => {this.related = rel.filter(n => n.type == this.productType).filter(m => m.id != this.productId).slice(0,3)});
               })
 

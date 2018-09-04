@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnChanges } from '@angular/core';
 import {ProductService} from "../product.service";
 import {Product} from "../product";
 import {ActivatedRoute} from "@angular/router";
@@ -19,13 +19,11 @@ export class CatalogComponent implements OnInit {
   constructor(private ProductService: ProductService,
               private route: ActivatedRoute) { }
 
-  ngOnInit() {
+ngOnInit() {
       this.route.params.subscribe(params => {
           this.type = params['type'];
       });
 
-      // this.ProductService.getProduct().subscribe(product => {
-      //     this.products = product});
       console.log('Type:'+this.type)
       if(!this.type){
         this.ProductService.getProduct().subscribe(product => {this.products = product});
@@ -34,6 +32,8 @@ export class CatalogComponent implements OnInit {
         
       }
 
+  }
 
-}
+
+
 }
