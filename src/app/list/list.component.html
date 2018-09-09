@@ -1,11 +1,11 @@
 <div class="ui-g-12 ui-grid-responsive">
-	<p-carousel headerText="Cars" [value]="cars" circular="circular" autoplayInterval="3000">
+	<p-carousel headerText="Guidein" [value]="cars" circular="circular" autoplayInterval="3000">
 		<ng-template let-car pTemplate="item">
 			<div class="ui-grid ui-grid-responsive">
 				<div class="ui-grid-row">
-					<div class="ui-grid-col-12"><img src="assets/1.jpg" width="60"></div>
+					<div class="ui-grid-col-12"><img src="{{car.src}}" height="200"></div>
 				</div>
-				<div class="ui-grid-row">
+				<!--class="ui-grid-row">
 					<div class="ui-grid-col-6">Vin</div>
 					<div class="ui-grid-col-6">{{car.vin}}</div>
 				</div>
@@ -16,7 +16,7 @@
 				<div class="ui-grid-row">
 					<div class="ui-grid-col-6">Color</div>
 					<div class="ui-grid-col-6">{{car.color}}</div>
-				</div>
+				</div-->
 			</div>
 		</ng-template>
 	</p-carousel>
