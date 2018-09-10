@@ -18,7 +18,6 @@ ngOnInit() {
         this.items = [
 			{label: 'Главная', icon: 'pi pi-fw pi-home',routerLink: "/main.html"},
             {label: 'Каталог', icon: 'pi pi-fw pi-th-large',routerLink: "/catalog.html"},
-			{label: 'Статьи', icon: 'pi pi-fw pi-th-large',routerLink: "/articles.html"},
             {label: 'Игрушки', icon: 'pi pi-fw pi-chevron-right',routerLink: ["/catalog.html", {type: 'игрушка'}]},
             {label: 'Мебель', icon: 'pi pi-fw pi-chevron-right',routerLink: ['/catalog.html',{type: 'мебель'}]},
 			{label: 'Спорт', icon: 'pi pi-fw pi-chevron-right',routerLink: ["/catalog.html", {type: 'спорт'}]},

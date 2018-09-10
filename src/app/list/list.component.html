@@ -1,9 +1,10 @@
 <div class="ui-g-12 ui-grid-responsive">
-	<p-carousel headerText="Guidein" [value]="cars" circular="circular" autoplayInterval="3000">
+	<p-carousel headerText="Guidein" [value]="cars" circular="circular" autoplayInterval="5000" numVisible="1">
 		<ng-template let-car pTemplate="item">
 			<div class="ui-grid ui-grid-responsive">
 				<div class="ui-grid-row">
-					<div class="ui-grid-col-12"><img src="{{car.src}}" height="200"></div>
+					<div class="ui-grid-col-6"><img src="{{car.src}}" height="200"></div>
+					<div class="ui-grid-col-6"><h3>Текст для баннера</h3></div>
 				</div>
 				<!--class="ui-grid-row">
 					<div class="ui-grid-col-6">Vin</div>
@@ -31,15 +32,4 @@
 	    <div>{{product.description | slice:0:50}}</div>
 	</p-card>
 	</div>
-</p-fieldset>
-
-<p-fieldset legend="Статьи">
-		<div class="aitem" *ngFor="let product of products" routerLink="/{{product.link}}">
-			<p-card title="{{product.sname}}" [style]="{width: '260px'}" styleClass="ui-card-shadow" >
-				<p-header>
-					<img [src]="product.iurl">
-				</p-header>
-				<div>{{product.description | slice:0:50}}</div>
-			</p-card>
-			</div>
 </p-fieldset>

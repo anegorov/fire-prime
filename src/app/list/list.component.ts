@@ -27,9 +27,6 @@ export class ListComponent implements OnInit {
             {vin: 'h453w54', year: 2012, brand: 'Honda', color: 'Blue', src: 'assets/banner/кресла.PNG'},
             {vin: 'g43gwwg', year: 1998, brand: 'Renault', color: 'White', src: 'assets/banner/мебель.PNG'},
             {vin: 'gf45wg5', year: 2011, brand: 'VW', color: 'Red', src: 'assets/banner/стулья.PNG'},
-            {vin: 'bhv5y5w', year: 2015, brand: 'Jaguar', color: 'Blue', src: 'assets/banner/таршер.jpg'},
-            {vin: 'ybw5fsd', year: 2012, brand: 'Ford', color: 'Yellow', src: 'assets/banner/парта.jpg'},
-            {vin: '45665e5', year: 2011, brand: 'Mercedes', color: 'Brown', src: 'assets/banner/стол.jpg'},
             {vin: 'he6sb5v', year: 2015, brand: 'Ford', color: 'Black', src: 'assets/banner/полка.jpg'}
         ];
   
