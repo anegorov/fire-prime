@@ -10,6 +10,24 @@
     background-color: #333;
 }
 
-h2,p,h5{
+.fleft{
+    color:aliceblue;
+    text-align: right;
+    background-color: #333;
+}
+
+a:visited {
+    color: aliceblue;
+}
+
+a:hover {
+    color: blue;
+}
+
+.atext:hover{
+    color: blue;
+}
+
+p{
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 }

@@ -12,7 +12,8 @@ export class AppComponent {
 	title = 'Guidein';
 	count: any = 0;
 	items: MenuItem[];
-
+	msgs: any[] = [];
+	
 ngOnInit() {
 
         this.items = [
@@ -30,5 +31,21 @@ ngOnInit() {
 		
 		aplus(){
 			this.count++;
+		}
+
+		showContacts() {
+			this.msgs.push({severity:'info', summary:'Контакты', detail:'По всем вопросам пожалуйста пишите на admin@guidein.ru'});
+		}
+
+		showCoopiration() {
+			this.msgs.push({severity:'info', summary:'Сотрудничество', detail:'По всем вопросам пожалуйста пишите на admin@guidein.ru'});
+		}
+
+		showDevDoc() {
+			this.msgs.push({severity:'info', summary:'Разработка инструкций', detail:'По всем вопросам пожалуйста пишите на admin@guidein.ru'});
+		}
+
+		showDevSite() {
+			this.msgs.push({severity:'info', summary:'Разработка сайта', detail:'По всем вопросам пожалуйста пишите на admin@guidein.ru'});
 		}
 }

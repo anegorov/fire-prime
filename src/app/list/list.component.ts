@@ -22,12 +22,12 @@ export class ListComponent implements OnInit {
   ngOnInit(){
 
           this.cars = [
-            {vin: 'r3278r2', year: 2010, brand: 'Audi', color: 'Black', src: 'assets/banner/домик-полка.PNG'},
-            {vin: 'jhto2g2', year: 2015, brand: 'BMW', color: 'White', src: 'assets/banner/игрушки.PNG'},
-            {vin: 'h453w54', year: 2012, brand: 'Honda', color: 'Blue', src: 'assets/banner/кресла.PNG'},
-            {vin: 'g43gwwg', year: 1998, brand: 'Renault', color: 'White', src: 'assets/banner/мебель.PNG'},
-            {vin: 'gf45wg5', year: 2011, brand: 'VW', color: 'Red', src: 'assets/banner/стулья.PNG'},
-            {vin: 'he6sb5v', year: 2015, brand: 'Ford', color: 'Black', src: 'assets/banner/полка.jpg'}
+            {txt: 'В современный век мы много времени проводим сидя за компьютером или любым другим девайсом. В таких условиях хочется переключить фокус на другой вид деятельности.', src: 'assets/banner/домик-полка.PNG'},
+            {txt: 'Дерево приятно на ощупь. От него приятно похнет.', src: 'assets/banner/игрушки.PNG'},
+            {txt: 'Интересно собирать мебель самому. Доводить изделие до ума. Как играть в конструктор на более высоком уровне.', src: 'assets/banner/кресла.PNG'},
+            {txt: 'Самореализация. Самооценка. Приятно делать что-то полезное.', src: 'assets/banner/мебель.PNG'},
+            {txt: 'Необычное хобби и вещи в твоем доме.', src: 'assets/banner/стулья.PNG'},
+            {txt: 'Учавствуюя в производственном процессе от начала и до конца, точнопонимаешь за что платишь и уверен в качестве.', src: 'assets/banner/полка.jpg'}
         ];
   
       this.ProductService.getProduct().subscribe(product => {

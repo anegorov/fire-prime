@@ -10,7 +10,7 @@ import { ImageEditComponent } from './image-edit/image-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main.html', pathMatch: 'full' },
-  { path: 'main.html', component: ListComponent, data: {type:'мебель'} },
+  { path: 'main.html', component: ListComponent },
   { path: 'catalog.html', component: CatalogComponent },
   { path: 'articles.html', component: ArticlesComponent },
   { path: 'product-edit.html', component: ProductEditComponent },
@@ -19,7 +19,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  //imports: [RouterModule.forRoot(routes,{ enableTracing: true })],
     imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })

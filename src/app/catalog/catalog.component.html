@@ -7,12 +7,14 @@
 </div>
 
 <p-fieldset legend="Каталог">
-<div class="aitem" *ngFor="let product of products | search:searchStr" routerLink="/{{product.link}}">
-	<p-card title="{{product.sname}}" [style]="{width: '260px'}" styleClass="ui-card-shadow" >
+<div class="ui-g">
+  <div class="ui-g-12 ui-md-6 ui-lg-4" *ngFor="let product of products | search:searchStr" routerLink="/{{product.link}}">
+	<p-card title="{{product.sname}}" [style]="{width: '100%'}" styleClass="ui-card-shadow" >
 	    <p-header>
 	        <img [src]="product.iurl">
 	    </p-header>
 	    <div>{{product.description | slice:0:50}}</div>
 	</p-card>
   </div>
+</div>  
 </p-fieldset>

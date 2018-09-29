@@ -34,7 +34,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';    
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
-
+import { HttpClientModule } from '@angular/common/http';
+import {GrowlModule} from 'primeng/growl';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -70,6 +71,8 @@ export const firebaseConfig = environment.firebaseConfig;
     InputTextareaModule,
     MessagesModule,
     MessageModule,
+    HttpClientModule,
+    GrowlModule,
       AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
