@@ -1,7 +1,7 @@
 import * as functions from 'firebase-functions';
 const cors = require('cors')({origin: true});
 
-const SENDGRID_API_KEY = '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';
+const SENDGRID_API_KEY = '';
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(SENDGRID_API_KEY);
 

@@ -3,8 +3,6 @@ import {ActivatedRoute, Params} from "@angular/router";
 import {ProductService} from "../product.service";
 import {Product} from "../product";
 import {Observable} from "rxjs/internal/Observable";
-import { Response, URLSearchParams } from '@angular/http';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpService} from '../http.service';
 import {CardModule} from 'primeng/card';
 import {TableModule} from 'primeng/table';
@@ -57,7 +55,7 @@ export class ItemComponent implements OnInit {
 
   sendEmail(lname:string, pdfurl:string, name:string, email:string) {
     let data1 = {to: email, 
-                from: 'test@guidein.ru',
+                from: 'admin@guidein.ru',
                 subject: 'Инструкция - ' + lname,
                 content: 'Здравствуйте, ' + name + '<br>Ссылка для скачивагия инструкции:<br> ' + pdfurl}
                 

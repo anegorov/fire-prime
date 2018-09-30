@@ -3,6 +3,10 @@
     "rules": "database.rules.json"
   },
   "hosting": {
+  "rewrites": [ {
+    "source": "**",
+    "destination": "/index.html"
+  } ],
     "public": "dist/fire",
     "ignore": [
       "firebase.json",
@@ -11,8 +15,7 @@
     ]
   },
   "functions": {
-    "predeploy": [
-      "npm --prefix \"functions\" run build"
-    ]
+    "predeploy": "npm --prefix \"functions\" run build",
+    "source": "functions"
   }
 }
