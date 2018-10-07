@@ -16,6 +16,7 @@ export class ProductEditComponent implements OnInit {
   fLname:string;
   fIurl:string;
   fLink:string;
+  fdurl:string;
   fLevel:string;
   fMaterial:string;
   fTags:string;
@@ -45,7 +46,8 @@ export class ProductEditComponent implements OnInit {
       this.fLname = pdoc.lname;
       this.fIurl = pdoc.iurl;
       this.fLink = pdoc.link;
-      this.fLevel = pdoc.level;
+      this.fdurl = pdoc.pdfurl;
+      this.fLevel = pdoc.level;1
       this.fMaterial = pdoc.material;
       this.fTags = pdoc.tags;
       this.fType = pdoc.type;
@@ -61,6 +63,7 @@ export class ProductEditComponent implements OnInit {
       lname:this.fLname,
       iurl:this.fIurl,
       link:this.fLink,
+      pdfurl:this.fdurl,
       level:this.fLevel,
       material:this.fMaterial,
       tags:this.fTags,
@@ -79,6 +82,7 @@ export class ProductEditComponent implements OnInit {
       lname:this.fLname,
       iurl:this.fIurl,
       link:this.fLink,
+      pdfurl:this.fdurl,
       level:this.fLevel,
       material:this.fMaterial,
       tags:this.fTags,
