@@ -55,9 +55,7 @@ export const firebaseConfig = environment.firebaseConfig;
   ],
   imports:[
  CommonModule,
-NgtUniversalModule,
- 
-    
+ NgtUniversalModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     AngularFireDatabaseModule,
@@ -81,5 +79,6 @@ NgtUniversalModule,
       AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
