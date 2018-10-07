@@ -97,4 +97,14 @@ updateImage(pId:string, data:any){
     const doc = this.afs.doc('products/'+pId);
     doc.set(data);
   }
+
+  addEmailRequest(rname, remail, rlname){
+    const collection = this.afs.collection('requests');
+
+    let curtime = new Date;
+
+    collection.add({name:rname, email:remail, date:curtime, lname:rlname})
+        .then(() => console.log('success request for email') )
+        .catch(err => console.log(err) )
+  }
 }

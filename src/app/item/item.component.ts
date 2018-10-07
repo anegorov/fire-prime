@@ -6,6 +6,7 @@ import {Observable} from "rxjs/internal/Observable";
 import { HttpService} from '../http.service';
 import {CardModule} from 'primeng/card';
 import {TableModule} from 'primeng/table';
+import {SeoService} from '../seo.service';
 
 @Component({
   selector: 'app-item',
@@ -28,10 +29,12 @@ export class ItemComponent implements OnInit {
   constructor(
       private route: ActivatedRoute,
       private ProductService: ProductService,
-      private httpService: HttpService
+      private httpService: HttpService,
+      private seo: SeoService
   ) { }
 
   ngOnInit() {
+    this.seo.generateTags({title:'',description:'',image:''});
       this.route.params.subscribe((params: Params) => {
           let userId = params['link'];
           this.ProductService.getProductByLink(userId).subscribe(
@@ -67,6 +70,9 @@ export class ItemComponent implements OnInit {
                         console.log('Error was rased')
                         console.log(err)
                       })
+
+    this.ProductService.addEmailRequest(name, email, lname);
+
     this.msgs.push({severity:'success', summary:'Ссылка отправлена на', detail:email});
   }
 
