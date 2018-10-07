@@ -98,6 +98,9 @@ updateImage(pId:string, data:any){
     doc.set(data);
   }
 
+  //***************** */
+  //Запросы инструкций
+  //***************** */
   addEmailRequest(rname, remail, rlname){
     const collection = this.afs.collection('requests');
 
@@ -107,4 +110,10 @@ updateImage(pId:string, data:any){
         .then(() => console.log('success request for email') )
         .catch(err => console.log(err) )
   }
+
+  getEmailRequests():Observable<any[]>{
+    this.usersCollection = this.afs.collection('requests', ref => ref.orderBy('date'));
+    this.usersObservable = this.usersCollection.valueChanges();
+    return this.usersObservable;
+}
 }

@@ -24,7 +24,8 @@ ngOnInit() {
 			{label: 'Спорт', icon: 'pi pi-fw pi-chevron-right',routerLink: ["/catalog.html", {type: 'спорт'}]},
 			{label: 'Досуг', icon: 'pi pi-fw pi-chevron-right',routerLink: ["/catalog.html", {type: 'досуг'}]},
 			{label: 'Редактор', icon: 'pi pi-fw pi-chevron-right',routerLink: "/product-edit.html"},
-			{label: 'Картинки', icon: 'pi pi-fw pi-chevron-right',routerLink: "/image-edit.html"}
+			{label: 'Картинки', icon: 'pi pi-fw pi-chevron-right',routerLink: "/image-edit.html"},
+			{label: 'Dashboard', icon: 'pi pi-fw pi-chevron-right',routerLink: "/dashboard.html"}
         ];
 
 		}

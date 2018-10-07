@@ -7,6 +7,7 @@ import {CatalogComponent} from "./catalog/catalog.component";
 import {ItemComponent} from "./item/item.component";
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ImageEditComponent } from './image-edit/image-edit.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main.html', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'articles.html', component: ArticlesComponent },
   { path: 'product-edit.html', component: ProductEditComponent },
   { path: 'image-edit.html', component: ImageEditComponent },
+  { path: 'dashboard.html', component: DashboardComponent },
   { path: ':link', component: ItemComponent }
 ];
 

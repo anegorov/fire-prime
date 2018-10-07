@@ -1,0 +1,19 @@
+<div class="ui-g">
+    <div class="ui-g-4">
+      <p-dataScroller [value]="emailRequests" [rows]="10">
+          <p-header>Скачано инструкций</p-header>
+          <ng-template let-product pTemplate="item">
+              <div class="ui-g product-item">
+                  <div class="ui-g-6">{{product.date.seconds * 1000 | date:'short'}}</div>
+                  <div class="ui-g-6">{{product.email}}</div>    
+              </div>
+          </ng-template>
+      </p-dataScroller>
+    </div>
+    <div class="ui-g-4">
+        <h3>Всего инструкций</h3>
+    </div>
+    <div class="ui-g-4">
+        <h3>Всего картинок</h3>
+    </div>
+</div>

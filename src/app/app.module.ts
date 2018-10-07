@@ -38,6 +38,7 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import { HttpClientModule } from '@angular/common/http';
 import {GrowlModule} from 'primeng/growl';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -51,7 +52,8 @@ export const firebaseConfig = environment.firebaseConfig;
     SearchPipe,
     StudyComponent,
     ProductEditComponent,
-    ImageEditComponent
+    ImageEditComponent,
+    DashboardComponent
   ],
   imports:[
  CommonModule,
