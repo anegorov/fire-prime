@@ -6,7 +6,7 @@ import {Pipe, PipeTransform} from "@angular/core";
 export class SearchPipe implements PipeTransform {
     transform(products,value){
         return products.filter(product => {
-            return product.sname.includes(value)
+            return product.description.includes(value)
         })
     }
 

@@ -8,11 +8,13 @@ const url = require('url');
 const app = express();
 
 const appUrl = 'guidein-c7f6f.firebaseapp.com';
-const renderUrl = 'https://render-tron.appspot.com/render';
+const renderUrl = 'https://guidein-c7f6f.appspot.com/render';
 
-const SENDGRID_API_KEY = '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';
+const SENDGRID_API_KEY = functions.config().sendgrid.key;
+const SENDGRID_TEMPLATE_ID = functions.config().sendgrid.template;
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(SENDGRID_API_KEY);
+sgMail.setSubstitutionWrappers('{{', '}}');
 
 export const sendEmail = functions.https.onRequest((request, response) => {
  
@@ -24,10 +26,16 @@ export const sendEmail = functions.https.onRequest((request, response) => {
   }
 
   const msg = {
-    to: request.body.to,
-    from: request.body.from,
-    subject: request.body.subject,
-    html: request.body.content
+    "from": {
+     "name": "Guidein",
+     "email": request.body.from
+    },
+    "personalizations": [{
+     "to": request.body.to,
+     "dynamic_template_data": {"name": request.body.name, "lname": request.body.lname, "pdfurl": request.body.pdfurl}
+    }],
+    "subject": request.body.subject,
+    "template_id": SENDGRID_TEMPLATE_ID
   };
 
  sgMail.send(msg);
@@ -53,7 +61,12 @@ function detectBot(userAgent){
     'slurp',
     'twitterbot',
     'pinterest',
-    'vkShare',    
+    'vkshare', 
+    'yandexaccessibilitybot',   
+    'yandexmetrika',   
+    'yandexscreenshotbot',   
+    'yandexblogs',   
+    'yandeximages'   
   ];
 
   const agent = userAgent.toLowerCase()
@@ -76,7 +89,7 @@ app.get('*', (req,res) => {
  if(isBot){
 
   const botUrl = generateUrl(req);
-
+console.log(renderUrl+'/'+botUrl);
   fetch(`${renderUrl}/${botUrl}`)
     .then(res => res.text())
     .then(body => {

@@ -10,7 +10,7 @@ import { ImageEditComponent } from './image-edit/image-edit.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/main.html', pathMatch: 'full' },
+  { path: '', component: ListComponent },
   { path: 'main.html', component: ListComponent },
   { path: 'catalog.html', component: CatalogComponent },
   { path: 'articles.html', component: ArticlesComponent },

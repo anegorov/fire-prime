@@ -27,30 +27,29 @@
                     </tbody>
                   </table>
                 </p-fieldset>
-            
             <p-fieldset legend="Описание"><p>{{ prod.description }}</p></p-fieldset>
             
-            <div class="ui-g-12">
-                <p-button label="Скачать инструкицю" (click)="openBlock()"></p-button>
-            </div>
-            <div class="ui-g-12" *ngIf="block">
+        <p-fieldset legend="Отправить инструкцию на email">
+            <form class="ui-g-12" #f="ngForm">
                 <div class="ui-g-12 ui-md-6">
                     <span class="ui-float-label">
-                      <input id="float-input" type="text" size="30" pInputText [(ngModel)]="name"> 
-                      <label for="float-input">Имя</label>
+                      <input id="float-input-name" name="float-input-name" type="text" size="30" required minlength="3" ngModel #name="ngModel" pInputText> 
+                      <label for="float-input-name">Имя</label>
                     </span>
+                    <p-message severity="error" text="Имя должно быть больше 5 символов" *ngIf="name.touched && !name.valid"></p-message>
                 </div>   
                 <div class="ui-g-12 ui-md-6">
                     <span class="ui-float-label">
-                      <input id="float-input" type="text" size="30" pInputText [(ngModel)]="email"> 
-                      <label for="float-input">Email</label>
+                      <input id="float-input-email" name="float-input-email" type="text" size="30" required minlength="5" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel #email="ngModel" pInputText> 
+                      <label for="float-input-email">Email</label>
                     </span>
+                    <p-message severity="error" text="Email введен некорректно" *ngIf="email.touched && !email.valid"></p-message>
                 </div>
                 <div class="ui-g-12 ui-md-6"> 
-                    <p-button label="Отправить" (click)="sendEmail(prod.lname,prod.pdfurl,name,email)"></p-button>
-                </div>
-            </div>
-        
+                    <p-button label="Отправить" (click)="sendEmail(prod.lname,prod.pdfurl,name.value,email.value)" [disabled]="!f.valid"></p-button>
+                </div>     
+            </form>
+        </p-fieldset>
 
         <p-fieldset legend="Похожие">
             <div class="aitem" *ngFor="let rel of related" routerLink="/{{rel.link}}">

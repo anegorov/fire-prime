@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../product.service";
 import {Product} from "../product";
-import {CardModule} from 'primeng/card';
-import {CarouselModule} from 'primeng/carousel';
-import {FieldsetModule} from 'primeng/fieldset';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-list',
@@ -17,9 +15,15 @@ export class ListComponent implements OnInit {
   products: Product[];
   cars: any[];
 
-  constructor(private ProductService: ProductService){}
+  constructor(
+    private ProductService: ProductService,
+    private titleService: Title
+    ){}
 
   ngOnInit(){
+
+          //Setting page title
+          this.titleService.setTitle('GuideIn - Инструкции для изготовления игрушек и мебели');
 
           this.cars = [
             {txt: 'В современный век мы много времени проводим сидя за компьютером или любым другим девайсом. В таких условиях хочется переключить фокус на другой вид деятельности.', src: 'assets/banner/домик-полка.PNG'},
