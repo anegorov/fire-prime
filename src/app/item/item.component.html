@@ -9,23 +9,11 @@
         </div>
         <div class="ui-g-6 ui-g-nopad">
                 <p-fieldset legend="Характеристики">
-
-                <table>
-                    <tbody>
-                    <tr>
-                      <td>Материалы</td>
-                      <td>{{ prod.material }}</td>
-                    </tr>
-                    <tr>
-                      <td>Время работы</td>
-                      <td>{{ prod.dtime }} часа</td>
-                    </tr>
-                    <tr>
-                      <td>Уровень сложности</td>
-                      <td>{{ prod.level }}</td>
-                    </tr>
-                    </tbody>
-                  </table>
+                    <div class="ui-g-12">
+                        <div class="ui-g-12 ui-md-4">Материалы</div><div class="ui-g-12 ui-md-8">{{ prod.material }}</div>
+                        <div class="ui-g-12 ui-md-4">Время работы(ч)</div><div class="ui-g-12 ui-md-8">{{ prod.dtime }}</div>
+                        <div class="ui-g-12 ui-md-4">Сложность</div><div class="ui-g-12 ui-md-8">{{ prod.level }}</div>
+                    </div>
                 </p-fieldset>
             <p-fieldset legend="Описание"><p>{{ prod.description }}</p></p-fieldset>
             

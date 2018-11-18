@@ -9,7 +9,7 @@ import {MenuItem} from 'primeng/api';
 })
 
 export class AppComponent {
-	title = 'Guidein';
+	title = 'Guidein.ru';
 	count: any = 0;
 	items: MenuItem[];
 	msgs: any[] = [];
